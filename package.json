@@ -1,0 +1,38 @@
+{
+  "name": "photo-album-organizer",
+  "version": "0.1.0",
+  "description": "Desktop photo album organizer built with Tauri and vanilla JavaScript",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run lint && npm run format:check && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "npm run lint && npm run format:check && tauri build",
+    "test": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "wdio run ./wdio.conf.js",
+    "lint": "eslint src --ext .js --max-warnings 0",
+    "lint:fix": "eslint src --ext .js --fix",
+    "format": "prettier --write \"src/**/*.{js,html,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,html,css}\"",
+    "precommit": "npm run lint && npm run format:check",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@tauri-apps/api": "^1.6.0",
+    "@tauri-apps/cli": "^1.6.3",
+    "@vitest/ui": "^1.6.1",
+    "eslint": "^8.57.1",
+    "happy-dom": "^12.10.3",
+    "husky": "^9.1.7",
+    "prettier": "^3.8.1",
+    "vite": "^5.4.21",
+    "vitest": "^1.6.1"
+  },
+  "dependencies": {
+    "pica": "^9.0.1"
+  }
+}

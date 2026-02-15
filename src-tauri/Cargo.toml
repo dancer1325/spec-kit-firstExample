@@ -1,0 +1,33 @@
+[package]
+name = "photo-album-organizer"
+version = "0.1.0"
+description = "Desktop photo album organizer"
+authors = ["Photo Album Team"]
+license = ""
+repository = ""
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.6.0", features = [] }
+
+[dependencies]
+tauri = { version = "1.6.0", features = ["dialog-open", "fs-read-file", "path-all", "shell-open"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tauri-plugin-sql = { version = "0.6.0", features = ["sqlite"] }
+image = "0.24"
+base64 = "0.21"
+
+[features]
+# This feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "z"
+strip = true

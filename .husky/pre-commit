@@ -1,0 +1,2 @@
+# Zero-warning policy enforcement per constitution
+npm run precommit
